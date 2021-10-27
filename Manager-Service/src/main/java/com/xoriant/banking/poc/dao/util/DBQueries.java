@@ -9,4 +9,7 @@ public class DBQueries {
 	public static final String ADD_NEW_MANAGER="insert into manager values(?,?)";
 	public static final String ADD_NEW_ADDRESS="insert into address values(?,?,?,?,?,?,?,?,?)";
 	public static final String ADD_NEW_BRANCH="insert into branch values(?,?,?,?)";
+	public static final String WITHDRAWMONEY="insert into transaction_details values(?,?,?,?,?,?,?)";
+	
+	public final static String ACCOUNT_DETAILS="select * from account_details";
 }
