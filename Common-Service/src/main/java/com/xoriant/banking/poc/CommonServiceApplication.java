@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import com.xoriant.banking.poc.dao.CommonDao;
 import com.xoriant.banking.poc.dao.CommonDaoImpl;
 
 @SpringBootApplication
@@ -13,7 +14,7 @@ public class CommonServiceApplication {
 		
 		ApplicationContext ac = SpringApplication.run(CommonServiceApplication.class, args);
 		
-		CommonDaoImpl common = ac.getBean(CommonDaoImpl.class);
+		CommonDao common = ac.getBean(CommonDaoImpl.class);
 		
 		//int balance = (int) common.checkBalance(4000043);
 		

@@ -8,11 +8,12 @@ import com.xoriant.banking.poc.dao.util.DBQueries;
 import com.xoriant.banking.poc.model.DTO;
 
 @Repository
-public class CommonDaoImpl {
+public class CommonDaoImpl implements CommonDao {
  
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
+	@Override
 	public double checkBalance(int accountNumber) {
 		System.out.println("<<<<<<<<<<<<<<<<<INSIDE CHECK BALANCE>>>>>>>>>>>>>>>>>");
 		DTO dto = DTO.getData(accountNumber, jdbcTemplate);
@@ -21,6 +22,7 @@ public class CommonDaoImpl {
 		return balance;
 	}
 	
+	@Override
 	public int changePassword(String oldPassword, String newPassword, int customer_id) {
 		
 		DTO userDTO = new DTO();

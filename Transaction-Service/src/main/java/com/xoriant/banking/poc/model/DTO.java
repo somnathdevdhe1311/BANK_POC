@@ -137,7 +137,7 @@ public class DTO {
 		this.customer_id = customer_id;
 	}
 
-	public DTO getData(int accountNumber, JdbcTemplate jdbcTemplate) {
+	public static DTO getData(int accountNumber, JdbcTemplate jdbcTemplate) {
 		return jdbcTemplate.query(DBQueries.ACCOUNT_DETAILS, (ResultSet rs) -> {
 			if (rs.next()) {
 				
@@ -146,8 +146,6 @@ public class DTO {
 				obj.setAccount_type_id(rs.getInt(2));
 				obj.setCustomer_id(rs.getInt(3));
 				obj.setPerson_type(rs.getString(4));
-				
-				
 				
 				return obj;
 				

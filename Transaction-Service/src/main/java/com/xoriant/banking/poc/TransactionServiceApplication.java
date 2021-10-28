@@ -1,21 +1,21 @@
 package com.xoriant.banking.poc;
 
-import java.util.List;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-import com.xoriant.banking.poc.dao.TransactionDaoImpl;
-import com.xoriant.banking.poc.model.TransactionDetails;
 
 @SpringBootApplication
+@EnableDiscoveryClient
 public class TransactionServiceApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext ac = SpringApplication.run(TransactionServiceApplication.class, args);
-		
-		TransactionDaoImpl trans = ac.getBean(TransactionDaoImpl.class);
+		SpringApplication.run(TransactionServiceApplication.class, args);
+		/*
+		 * ApplicationContext ac =
+		 * 
+		 * TransactionDaoImpl trans = ac.getBean(TransactionDaoImpl.class);
+		 */
 		
 		//int result = trans.DepositMoney(4000043, 30000, "10000 depoisted", 1, 1, 1);
 		//if(result>1)
@@ -35,8 +35,12 @@ public class TransactionServiceApplication {
 		 */
 		//int balance = trans.fundTransfer(4000043, 4000010, 500, "500 send to sagar", 1, 3, 2);
 		 //System.out.println("==================Money transfer to sagar New Balance Is==============="+balance);
-		List<TransactionDetails> statementList = trans.CustomizedMiniStatement(4000043, "2021-10-15,", "2021-10-26");
-		System.out.println(statementList.size()+"==================Customised Mini statement==============="+statementList);
+		/*
+		 * List<TransactionDetails> statementList =
+		 * trans.CustomizedMiniStatement(4000043, "2021-10-15,", "2021-10-26");
+		 * System.out.println(statementList.size()
+		 * +"==================Customised Mini statement==============="+statementList);
+		 */
 	}
 
 }
