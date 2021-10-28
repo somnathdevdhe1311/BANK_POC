@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.xoriant.banking.poc.model.TransactionDetails;
 
-@FeignClient(name = "transaction_service")
+@FeignClient(name ="transaction_service")
 public interface TransactionServiceProxy {
 	
 	@GetMapping("/api/transaction/withdraw/{accountNumber}/{amount}/{description}/{user_type}/{transaction_type_id}/{account_type}")

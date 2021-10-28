@@ -2,12 +2,14 @@ package com.xoriant.banking.poc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.ApplicationContext;
 
 import com.xoriant.banking.poc.dao.UserDao;
 import com.xoriant.banking.poc.dao.UserDaoImpl;
 
 @SpringBootApplication
+@EnableDiscoveryClient
 public class UserServiceApplication {
 
 	public static void main(String[] args) {

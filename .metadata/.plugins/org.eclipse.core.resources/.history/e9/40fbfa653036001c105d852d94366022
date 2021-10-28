@@ -1,5 +1,0 @@
-package com.xoriant.banking.poc.dao;
-
-public class ManagerDaoImpl {
-
-}
